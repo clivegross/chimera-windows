@@ -1,23 +1,22 @@
-# Chimera Linux client
+# Chimera for Windows
 
 ## License
 [GNU GENERAL PUBLIC LICENSE Version 3](./LICENSE)
 
 ## Description
 Has the following possible uses:
-- Run as an onsite backup agent for [chimera cloud](https://chimeracloud.io).
+- ~~Run as an onsite backup agent for [chimera cloud](https://chimeracloud.io).~~ (not yet supported)
 - Run as a standalone service for automating scheduled backup jobs using [rclone ](https://rclone.org/).
 
 ## Quickstart
 ### Installation
-Run setup.sh or read the contents of the script to see what must be done.
+Download the latest version of Chimera from [here](https://github.com/clivetyphon/chimera-windows/releases).
 
 ### Configuration
 Configuration workflow is roughly as follows:
-1. Configure remote in rclone
-2. Configure main config file
-3. Configure backup job config files
-4. Start/enable systemd service
+1. Configure main config file
+2. Configure backup job config files
+3. Install and start the Windows service.
 
 #### Configure rclone
 Set up a remote using `rclone config`.
@@ -30,9 +29,8 @@ chimera does not currently support password protected rclone config.
 chimera will look for the main config file and job config files, resepectively, by default in:
 
 ```
-/etc/opt/chimera/config.ini
-/etc/opt/chimera/jobs/*.ini
-
+C:\Program Files/Chimera/Chimera Backup Agent/config.ini
+C:\Program Files/Chimera/Chimera Backup Agent//jobs/*.ini
 ```
 
 These path settings can be changed in the main app `paths.ini` file.
@@ -50,8 +48,8 @@ username: Me
 password: My password
 enabled: True
 
-[rclone]
-remote: backup-gdrive
+[remote]
+...
 
 [logging]
 file: /var/log/chimera/backups.log
@@ -87,5 +85,4 @@ Options:
 
 ## Dependencies
 - rclone
-- python 2.7 (python 3.x should work with some minor fixes)
-- systemd for running as a service (optional)
+- NSSM
