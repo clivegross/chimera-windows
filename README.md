@@ -4,9 +4,22 @@
 [GNU GENERAL PUBLIC LICENSE Version 3](./LICENSE)
 
 ## Description
-Has the following possible uses:
-- ~~Run as an onsite backup agent for [chimera cloud](https://chimeracloud.io).~~ (not yet supported)
-- Run as a standalone service for automating scheduled backup jobs using [rclone ](https://rclone.org/).
+Has the following possible use cases:
+- ~~Run as an onsite backup agent for [Chimera Cloud Backup and Disaster Recovery](https://chimeracloud.io).~~ (not yet supported)
+- Run as a standalone service for automating scheduled backup jobs on any Windows machine. Can backup to any of the following storage services:
+  * Amazon S3
+  * Google Drive
+  * Openstack Swift / Rackspace cloud files / Memset Memstore
+  * Dropbox
+  * Google Cloud Storage
+  * Amazon Drive
+  * Microsoft OneDrive
+  * Hubic
+  * Backblaze B2
+  * Yandex Disk
+  * SFTP
+  * FTP
+  * HTTP
 
 ## Quickstart
 ### Installation
